@@ -4,33 +4,26 @@
 // if evenly divisible by three and five, return fizzbuzz
 // otherwise return the number 
 
-var checkMe = function(){
-  return true;
-}
+const checkMe = () => true;
 
-var checkNumber = function(num) {
+
+const checkNumber = (num) => {
   if(num % 3 === 0 && num % 5 === 0) {
-    return "FizzBuzz";
+    return `FizzBuzz`;
   }
   if(num % 3 === 0){
-    return "fizz";
+    return `fizz`;
   } 
   if(num % 5 === 0){
-    return "buzz";
+    return `buzz`;
   } 
   return num;
 }
 
-var fizzBuzzFinally = function (arr) {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i] = checkNumber(arr[i]);    
-  }  
-  return arr;
-}
-
-
-
+const fizzBuzzFinally = (arr) => arr.map(x => checkNumber(x));
 
 module.exports = {
-  checkMe: checkMe, checkNumber: checkNumber, fizzBuzzFinally: fizzBuzzFinally
+  checkMe: checkMe, 
+  checkNumber: checkNumber, 
+  fizzBuzzFinally: fizzBuzzFinally
 }
